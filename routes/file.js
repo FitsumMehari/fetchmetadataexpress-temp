@@ -52,7 +52,7 @@ router.post('/:userId/upload-file', verifyTokenAndAuthorization, async (req, res
                         const tempmetadata = JSON.stringify(finalMetadata);
                         tempsavedFile = setSavedFile(tempfileName, tempfileURL, tempmetadata);
 
-                        console.log(tempsavedFile);
+                        console.log(req.file.path);
 
                         tempsavedFile.userId = req.params.userId;
                         console.log("here................");

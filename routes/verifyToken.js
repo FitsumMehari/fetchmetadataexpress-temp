@@ -1,4 +1,6 @@
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const verifyToken = (req, res, next) => {
     const authHeader = req.headers.token;
@@ -20,7 +22,7 @@ const verifyToken = (req, res, next) => {
         });
     } else {
         const token = authHeader.split(" ")[1];
-        jwt.verify(token, "token key", (error, user) => {
+        jwt.verify(token, process.env.JWTKEY, (error, user) => {
             if (error) {
                 res.status(403).json("Token is incorrect!")
             } else {
