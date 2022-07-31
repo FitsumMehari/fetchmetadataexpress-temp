@@ -3,10 +3,11 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const path = require('path');
 const mongoose = require('mongoose');
+dotenv.config();
 
 
 mongoose.connect(
-    "mongodb+srv://hule:hulepass@hule.x23hnnh.mongodb.net/metadata?retryWrites=true&w=majority"
+    process.env.MONGODB_URL
 
 ).then(
     () => {
@@ -18,7 +19,6 @@ mongoose.connect(
     }
 )
 
-dotenv.config();
 
 const metadataExtractor = require("./routes/metadataExtractor");
 const authRoute = require("./routes/auth")
