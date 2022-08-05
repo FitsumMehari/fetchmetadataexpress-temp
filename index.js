@@ -23,6 +23,8 @@ mongoose.connect(
 const metadataExtractor = require("./routes/metadataExtractor");
 const authRoute = require("./routes/auth")
 const fileRoute = require("./routes/file")
+const fileDownloadRoute = require("./routes/downloadFile")
+const reviewRoute = require("./routes/review");
 
 const PORT = process.env.PORT || 3000;
 
@@ -35,6 +37,8 @@ app.use(express.json());
 // app.use('/upload', metadataExtractor);
 app.use('/auth', authRoute);
 app.use('/files', fileRoute);
+app.use('/download-file', fileDownloadRoute);
+app.use('/review', reviewRoute);
 
 
 app.get("/", (req, res) => {
