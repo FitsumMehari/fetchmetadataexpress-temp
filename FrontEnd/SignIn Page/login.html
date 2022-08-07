@@ -77,7 +77,7 @@
             </div>
         </div>
         <div class="create">
-            <p>Don`t have an account? <strong><a href="/reg page/index.html"> Create account</a></strong></p>
+            <p>Don`t have an account? <strong><a href="/reg page/reg.html"> Create account</a></strong></p>
         </div>
     </div>
 
@@ -117,10 +117,14 @@
                     data.accessToken && localStorage.setItem('userId', data.userDetails._id)
                     data.accessToken && localStorage.setItem('username', data.userDetails.username)
                     data.accessToken && localStorage.setItem('email', data.userDetails.email)
+                    window.location.href = "/metadata page/metadata.html";
 
                 },
                 error: function (jqxhr, textStatus, errorThrown) {
                     console.log(errorThrown);
+                    alert("Wrong Credientials!")
+                    $("#mail").val("");
+                    $("#psw").val("")
                 }
             })
         })
