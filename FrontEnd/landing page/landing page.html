@@ -6,6 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fetch MetaData</title>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="/landing page/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,10 +24,10 @@
   <header>
     <div class="hamburger-menu">
       <ul class="menu">
-        <!-- <li><a class="menuItem" href="#home">Home</a></li> -->
+        <li><a class="menuItem" href="#home">Home</a></li>
         <li><a class="menuItem" href="#documentation">Documentation</a></li>
         <li><a class="menuItem" href="#faq">FAQ</a></li>
-        <li><a class="menuItem" href="/SignIn Page/login.html">Login</a></li>
+        <li><a class="menuItem" href="">Login</a></li>
       </ul>
       <button class="hamburger-img">
         <!-- material icons https://material.io/resources/icons/ -->
@@ -41,7 +48,7 @@
         <a href="#home" style="text-decoration: none; border: none;">Home</a>
         <a href="#documentation" class="documentation" style="text-decoration: none; border: none;">Documentation</a>
         <a href="#faq" class="documentation" style="text-decoration: none; border: none;">FAQ</a>
-        <a class="sign-in" href="/SignIn Page/login.html">Login</a>
+        <a class="sign-in" id="sign-in" href="/SignIn Page/login.html">Login</a>
       </div>
     </nav>
   </header>
@@ -52,21 +59,20 @@
           <h1>Fetch the metadata from your files in a flash</h1>
           <h2>Discover & fetch the Metadata information from your files with just 3 steps</h2>
           <div class="burger">
-            <div class="burg"><img class="hamburger" src="/landing page/images/menu.png" alt=""></div>
+            <div class="burg"><img class="hamburger" src="/landing page/images/upload-file.svg" alt=""></div>
             <p>Upload your file</p>
           </div>
           <div class="burger">
-            <div class="burg"><img class="hamburger" src="/landing page/images/menu.png" alt=""></div>
+            <div class="burg"><img class="hamburger" src="/landing page/images/extract.svg" alt=""></div>
             <p>Extract metadata from file with a click/tap</p>
           </div>
           <div class="burger">
-            <div class="burg"><img class="hamburger" src="/landing page/images/menu.png" alt=""></div>
+            <div class="burg"><img class="hamburger" src="/landing page/images/save.svg" alt=""></div>
             <p>Save or export extracted data as a local file to your device</p>
           </div>
-          <a href="/reg page/reg.html" style="text-decoration: none;"><button class="started">Get Started</button> </a>
-          <!-- <button ><a href="/reg page/index.html">Get Started</a></button> -->
+          <button class="started" id="get-started-btn">Get Started</button>
         </div>
-        <img class="image" src="/landing page/images/Grid pix Landing Page.png"></img>
+        <img class="image" src="/landing page/images/header-image.png"></img>
       </div>
 
     </div>
@@ -173,36 +179,77 @@
           </div>
         </div>
       </div>
-
+      <!-- BUNMI's ADDED CODE FOR FAQ -->
       <div class="faq" id="faq">
+        <h1>Frequently Asked Questions?</h1>
+        <div class="content">
+          <div class="question">
+            <p class="questions">Can I discover geolocations for my files?</p>
+          </div>
+          <div class="answer">
+            <p class="answers">Yes, but just if the file includes GPS position information. To find out,
+              upload it to our platform. In
+              the
+              phone's settings, you can disable geotagging. Here, GPS information will not be present in images.</p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="question">
+            <p class="questions">Can I export viewed metadata?</p>
+          </div>
+          <div class="answer">
+            <p class="answers">Our platform allows you to export viewed metadata to local drive or device</p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="question">
+            <p class="questions">Do videos contain metadata?</p>
+          </div>
+          <div class="answer">
+            <p class="answers">All digital files contain metadata. However, multiple factors may determine availability of a certain
+              metadata. Such as kind of device, device configuration and kind of digital file</p>
+          </div>
+        </div>
+        <div class="content">
+          <div class="question">
+            <p class="questions">Can I share a file's metadata?</p>
+          </div>
+          <div class="answer">
+            <p>Our platform allows you to obtain and share your metadata with family, friends and colleagues online</p>
+          </div>
+        </div>
+      </div>
+      <!-- BUNMI's ADDED CODE FOR FAQ -->
+
+      <!-- <div class="faq" id="faq">
         <h1>Frequently Asked Questions?</h1>
         <div class="questions">
           <div class="button">
-            <button class="btn">Can I discover geolocations for my files?<img class="open-btn" id="open-btn" onclick="openButton()" onclick="closeButton()" src="/landing page/images/open.svg"
-                alt=""><img class="close-btn" onclick="closeButton()" id="close-btn" src="/landing page/images/close.svg" alt=""></button>
+            <button class="btn">Can I discover geolocations for my files?<img class="open-btn" id="open-btn" onclick="openButton()" onclick="closeButton()" src="images/open.svg"
+                alt=""><img class="close-btn" onclick="closeButton()" id="close-btn" src="images/close.svg" alt=""></button>
             <p class="answers" id="answers">Yes, but just if the file includes GPS position information. To find out,
               upload it to our platform. In
               the
               phone's settings, you can disable geotagging. Here, GPS information will not be present in images.</p>
           </div>
           <div class="button">
-            <button class="btn">Can I export viewed metadata?<img class="open-btn" onclick="openButton()" id="open" src="/landing page/images/open.svg"
-                alt=""><img class="close-btn" id="close-btn" src="/landing page/images/close.svg" alt=""></button>
+            <button class="btn">Can I export viewed metadata?<img class="open-btn" onclick="openButton()" id="open" src="images/open.svg"
+                alt=""><img class="close-btn" id="close-btn" src="images/close.svg" alt=""></button>
             <p class="answers"></p>
           </div>
           <div class="button">
-            <button class="btn">Do videos contain metadata?<img class="open-btn" onclick="openButton()" id="open" src="/landing page/images/open.svg" alt=""><img
-                class="close-btn" id="close-btn" src="/landing page/images/close.svg" alt=""></button>
+            <button class="btn">Do videos contain metadata?<img class="open-btn" onclick="openButton()" id="open" src="images/open.svg" alt=""><img
+                class="close-btn" id="close-btn" src="images/close.svg" alt=""></button>
             <p class="answers"></p>
           </div>
           <div class="button">
-            <button class="btn">Can I share a files metadata?<img class="open-btn" onclick="openButton()" id="open" src="/landing page/images/open.svg"
-                alt=""><img class="close-btn" id="close-btn" src="/landing page/images/close.svg" alt=""></button>
+            <button class="btn">Can I share a files metadata?<img class="open-btn" onclick="openButton()" id="open" src="images/open.svg"
+                alt=""><img class="close-btn" id="close-btn" src="images/close.svg" alt=""></button>
             <p class="answers"></p>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </main>
   <footer>&copy; 2022 Team 82 fetch_metadata</footer>
